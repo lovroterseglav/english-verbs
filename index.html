@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>English Verbs</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1>Irregular Verbs</h1>
+    <h2 id="verb"></h2>
+
+    <table>
+      <tr id="infinitive">
+        <td>
+          <input
+            type="text"
+            name="infinitive"
+            placeholder="Infinitive"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+          />
+        </td>
+        <td><div></div></td>
+      </tr>
+      <tr id="past">
+        <td>
+          <input
+            type="text"
+            name="past"
+            placeholder="Past"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="off"
+          />
+        </td>
+        <td><div></div></td>
+      </tr>
+      <tr id="past_participle">
+        <td>
+          <input
+            type="text"
+            name="past_participle"
+            placeholder="Past Participle"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="off"
+          />
+        </td>
+        <td><div></div></td>
+      </tr>
+    </table>
+    <button id="check">Check</button>
+    <button id="next">Next</button>
+    <script>
+      // Call init() when the page loads
+      (async function () {
+        await init();
+      })();
+      // Add a click event listener to call getNext() when the button is clicked
+      document.getElementById("next").addEventListener("click", function () {
+        getNext();
+      });
+      document.getElementById("check").addEventListener("click", function () {
+        checkAnswers();
+      });
+    </script>
+  </body>
+</html>
