@@ -53,15 +53,14 @@ async function clearAnswerFields() {
 
 async function getNext() {
   await clearAnswerFields();
+  if (data.length <= 0) {
+    await fetchData();
+  }
 
   let d = data[0];
   let verb = document.getElementById("verb");
 
   verb.innerText = d["SLO"];
-
-  if (data.length <= 1) {
-    await fetchData();
-  }
 }
 
 async function init() {
