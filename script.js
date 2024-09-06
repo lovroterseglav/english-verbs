@@ -27,9 +27,9 @@ async function checkAnswers() {
     let valid_verbs = verb.split("/").map((x) => x.trim());
 
     if (valid_verbs.includes(ans_field.value.toLowerCase())) {
-      ans_field.classList = ["ok"];
+      ans_field.classList.add("ok");
     } else {
-      ans_field.classList = ["bad"];
+      ans_field.classList.add("bad");
     }
     ans_field.disabled = true;
 
@@ -43,7 +43,7 @@ async function clearAnswerFields() {
     let div_field = document.getElementById(t).querySelector("div");
 
     ans_field.value = "";
-    ans_field.classList = [];
+    ans_field.classList.remove("bad", "ok");
     ans_field.disabled = false;
 
     div_field.innerText = "";

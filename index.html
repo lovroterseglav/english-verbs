@@ -11,6 +11,7 @@
   <body>
     <h1>Irregular Verbs</h1>
     <h2 id="verb"></h2>
+    <button id="dark-mode">Toggle dark mode</button>
 
     <table>
       <tr id="infinitive">
@@ -70,6 +71,12 @@
         document.getElementById("check").hidden = true;
         document.getElementById("next").hidden = false;
         checkAnswers();
+      });
+      document.getElementById("dark-mode").addEventListener("click", function () {
+        document.body.classList.toggle("dark-mode");
+        document
+          .querySelectorAll("button, input")
+          .forEach((x) => x.classList.toggle("dark-mode"));
       });
     </script>
   </body>
