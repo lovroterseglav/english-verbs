@@ -54,7 +54,7 @@
       </tr>
     </table>
     <button id="check">Check</button>
-    <button id="next">Next</button>
+    <button id="next" hidden>Next</button>
     <script>
       // Call init() when the page loads
       (async function () {
@@ -62,9 +62,13 @@
       })();
       // Add a click event listener to call getNext() when the button is clicked
       document.getElementById("next").addEventListener("click", function () {
+        document.getElementById("check").hidden = false;
+        document.getElementById("next").hidden = true;
         getNext();
       });
       document.getElementById("check").addEventListener("click", function () {
+        document.getElementById("check").hidden = true;
+        document.getElementById("next").hidden = false;
         checkAnswers();
       });
     </script>
