@@ -24,8 +24,9 @@ async function checkAnswers() {
     let ans_field = document.getElementById(t).querySelector("input");
     let div_field = document.getElementById(t).querySelector("div");
     let verb = data[0][t];
+    let valid_verbs = verb.split("/").map((x) => x.trim());
 
-    if (ans_field.value === verb) {
+    if (valid_verbs.includes(ans_field.value.toLowerCase())) {
       ans_field.classList = ["ok"];
     } else {
       ans_field.classList = ["bad"];
