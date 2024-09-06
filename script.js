@@ -80,6 +80,20 @@ async function registerListeners() {
       .querySelectorAll("button, input")
       .forEach((x) => x.classList.toggle("dark-mode"));
   });
+
+  for (let i = 0; i < tenses.length; i++) {
+    document
+      .getElementById(tenses[i])
+      .querySelector("input")
+      .addEventListener("keydown", function (event) {
+        if (event.key === "Enter" || event.keyCode === 13) {
+          document
+            .getElementById(tenses[(i + 1) % tenses.length])
+            .querySelector("input")
+            .focus();
+        }
+      });
+  }
 }
 
 async function init() {
