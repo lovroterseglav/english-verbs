@@ -63,6 +63,13 @@ async function getNext() {
   verb.innerText = d["SLO"];
 }
 
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+  document
+    .querySelectorAll("button, input")
+    .forEach((x) => x.classList.toggle("dark-mode"));
+}
+
 async function registerListeners() {
   document.getElementById("next").addEventListener("click", function () {
     document.getElementById("check").hidden = false;
@@ -75,10 +82,7 @@ async function registerListeners() {
     checkAnswers();
   });
   document.getElementById("dark-mode").addEventListener("click", function () {
-    document.body.classList.toggle("dark-mode");
-    document
-      .querySelectorAll("button, input")
-      .forEach((x) => x.classList.toggle("dark-mode"));
+    toggleDarkMode();
   });
 
   for (let i = 0; i < tenses.length; i++) {
@@ -96,8 +100,16 @@ async function registerListeners() {
   }
 }
 
+function setDefaultTheme() {
+  const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+  if (darkThemeMq.matches) {
+    toggleDarkMode();
+  }
+}
+
 async function init() {
   await registerListeners();
+  setDefaultTheme();
   await fetchData();
   await getNext();
 }
