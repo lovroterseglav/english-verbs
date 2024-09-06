@@ -63,7 +63,27 @@ async function getNext() {
   verb.innerText = d["SLO"];
 }
 
+async function registerListeners() {
+  document.getElementById("next").addEventListener("click", function () {
+    document.getElementById("check").hidden = false;
+    document.getElementById("next").hidden = true;
+    getNext();
+  });
+  document.getElementById("check").addEventListener("click", function () {
+    document.getElementById("check").hidden = true;
+    document.getElementById("next").hidden = false;
+    checkAnswers();
+  });
+  document.getElementById("dark-mode").addEventListener("click", function () {
+    document.body.classList.toggle("dark-mode");
+    document
+      .querySelectorAll("button, input")
+      .forEach((x) => x.classList.toggle("dark-mode"));
+  });
+}
+
 async function init() {
+  await registerListeners();
   await fetchData();
   await getNext();
 }
