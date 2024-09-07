@@ -59,7 +59,7 @@ async function getNext() {
 
   let d = data[0];
   let verb = document.getElementById("verb");
-
+  document.getElementById(tenses[0]).querySelector("input").focus();
   verb.innerText = d["SLO"];
 }
 
