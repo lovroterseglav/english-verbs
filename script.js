@@ -26,7 +26,7 @@ async function checkAnswers() {
     let verb = data[0][t];
     let valid_verbs = verb.split("/").map((x) => x.trim());
 
-    if (valid_verbs.includes(ans_field.value.toLowerCase())) {
+    if (valid_verbs.includes(ans_field.value.toLowerCase().trim())) {
       ans_field.classList.add("ok");
     } else {
       ans_field.classList.add("bad");
