@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>German Verbs</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="german.js"></script>
+  </head>
+  <body>
+    <h1>Irregular Verbs</h1>
+    <button id="dark-mode">Toggle dark mode</button>
+    <h2 id="verb" style="margin-bottom: 5px"></h2>
+
+    <table>
+      <tr id="ndl">
+        <td>
+          <input
+            type="text"
+            name="ndl"
+            placeholder="nedoločnik"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+          />
+        </td>
+        <td><div></div></td>
+      </tr>
+      <tr id="ich">
+        <td>
+          <input
+            type="text"
+            name="ich"
+            placeholder="ich"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+          />
+        </td>
+        <td><div></div></td>
+      </tr>
+      <tr id="du">
+        <td>
+          <input
+            type="text"
+            name="du"
+            placeholder="du"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+          />
+        </td>
+        <td><div></div></td>
+      </tr>
+      <tr id="er_sie_es">
+        <td>
+          <input
+            type="text"
+            name="er_sie_es"
+            placeholder="er/sie/es"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+          />
+        </td>
+        <td><div></div></td>
+      </tr>
+      <tr id="wir">
+        <td>
+          <input
+            type="text"
+            name="wir"
+            placeholder="wir"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+          />
+        </td>
+        <td><div></div></td>
+      </tr>
+      <tr id="ihr">
+        <td>
+          <input
+            type="text"
+            name="ihr"
+            placeholder="ihr"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+          />
+        </td>
+        <td><div></div></td>
+      </tr>
+      <tr id="sie_Sie">
+        <td>
+          <input
+            type="text"
+            name="sie_Sie"
+            placeholder="sie/Sie"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+          />
+        </td>
+        <td><div></div></td>
+      </tr>
+    </table>
+    <button id="check">Check</button>
+    <button id="next" hidden>Next</button>
+    <script>
+      // Call init() when the page loads
+      (async function () {
+        await init();
+      })();
+    </script>
+  </body>
+</html>
